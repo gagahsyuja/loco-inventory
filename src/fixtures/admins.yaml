@@ -1,0 +1,7 @@
+---
+- id: 1
+  pid: 11111111-1111-1111-1111-111111111111
+  name: "Gagah Syuja"
+  description: "One and only admin"
+  created_at: "2023-11-12T12:34:56.789Z"
+  updated_at: "2023-11-12T12:34:56.789Z"

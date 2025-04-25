@@ -1,0 +1,45 @@
+---
+- id: 1
+  pid: 11111111-1111-1111-1111-111111111111
+  name: "SAPPHIRE NITRO+ RX5700XT"
+  description: "An AMD GPU with 8GB memory."
+  price: 2300000
+  quantity: 5
+  supplier_id: 1
+  category_id: 1
+  created_by: 1
+  created_at: "2023-11-12T12:34:56.789Z"
+  updated_at: "2023-11-12T12:34:56.789Z"
+- id: 2
+  pid: 11111111-1111-1111-1111-111111111111
+  name: "GIGABYTE GTX1050 GAMING G1"
+  description: "An NVIDIA GPU with 2GB memory."
+  price: 1000000
+  quantity: 15
+  supplier_id: 1
+  category_id: 1
+  created_by: 1
+  created_at: "2023-11-12T12:34:56.789Z"
+  updated_at: "2023-11-12T12:34:56.789Z"
+- id: 3
+  pid: 11111111-1111-1111-1111-111111111111
+  name: "AMD Ryzen 5 5600"
+  description: "An AMD CPU with 6 cores and 12 threads."
+  price: 1100000
+  quantity: 10
+  supplier_id: 2
+  category_id: 2
+  created_by: 1
+  created_at: "2023-11-12T12:34:56.789Z"
+  updated_at: "2023-11-12T12:34:56.789Z"
+- id: 4
+  pid: 11111111-1111-1111-1111-111111111111
+  name: "Intel Xeon X3430"
+  description: "An Intel CPU with 4 core and 8 threads."
+  price: 100000
+  quantity: 3
+  supplier_id: 2
+  category_id: 2
+  created_by: 1
+  created_at: "2023-11-12T12:34:56.789Z"
+  updated_at: "2023-11-12T12:34:56.789Z"
