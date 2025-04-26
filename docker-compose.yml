@@ -1,0 +1,34 @@
+services:
+  backend:
+    container_name: loco-inventory
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5150:5150
+    tty: true
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - loco
+
+  db:
+    container_name: postgres-db
+    image: postgres:latest
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 3s
+      timeout: 10s
+      retries: 15
+    env_file:
+      - .env
+    networks:
+      - loco
+
+networks:
+  loco:
