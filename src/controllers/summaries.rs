@@ -6,8 +6,24 @@ use axum::debug_handler;
 use sea_orm::{ Statement, DbBackend, FromQueryResult, JsonValue };
 
 #[debug_handler]
-pub async fn index(State(_ctx): State<AppContext>) -> Result<Response> {
-    format::empty()
+pub async fn index(State(ctx): State<AppContext>) -> Result<Response>
+{
+    let summary = JsonValue::find_by_statement(Statement::from_sql_and_values(
+            DbBackend::Postgres,
+            r#"
+                SELECT
+                    COUNT(items.id) AS total_item_counts,
+                    SUM(items.price*items.quantity) AS total_item_values,
+                    (SELECT COUNT(id) FROM categories) AS total_category_counts,
+                    (SELECT COUNT(id) FROM suppliers) AS total_supplier_counts
+                FROM items;
+            "#,
+            []
+        ))
+        .all(&ctx.db)
+        .await?;
+
+    format::json(summary)
 }
 
 #[debug_handler]
